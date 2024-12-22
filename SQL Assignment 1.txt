@@ -1,0 +1,93 @@
+1) select count(*)  from emp;
+
+2) select count(*) from dept;
+
+3) select * from emp;
+
+4) select * from dept;
+
+5) select sum(sal) from emp;
+
+6) select sum(comm) from emp;
+
+7) select job from emp where comm > 0;
+
+8) select sysdate from dual;
+
+9) select deptno, count(*) from emp group by deptno;
+
+10) select sum(sal) from emp;
+
+11) select job, count(*) from emp group by job;
+
+12) select ename, deptno from emp order by deptno;
+
+13) select empno, ename, extract(day from hiredate) as hire_day,
+           extract(month from hiredate) as hire_month,
+           extract(year from hiredate) as hire_year
+    from emp;
+
+14) select * 
+    from emp 
+    order by deptno;
+
+15) select * 
+    from emp 
+    order by job;
+
+16) select * 
+    from emp 
+    order by sal desc;
+
+17) select * 
+    from emp 
+    order by deptno asc, sal desc;
+
+18) select count(*) 
+    from emp 
+    where length(ename) = 6;
+
+19) select max(sal), min(sal) 
+    from emp;
+
+20) select deptno, max(sal), min(sal), avg(sal), sum(sal) as total_salary 
+    from emp 
+    group by deptno;
+
+21) select ename, hiredate 
+    from emp 
+    order by hiredate;
+
+22) select * from emp where hiredate = (select max(hiredate) from emp);
+
+23) select ename, hiredate 
+    from emp 
+    where hiredate = (select min(hiredate) from emp);
+
+24) select * 
+    from emp 
+    where hiredate = (select min(hiredate) from emp);
+
+25) select ename, deptno, hiredate 
+    from emp 
+    order by hiredate desc, deptno asc;
+
+26) select * 
+    from emp 
+    where sal >= (select avg(sal) from emp);
+
+27) select * 
+    from emp 
+    where sal between 2000 and 4000;
+
+28) select ename as highest_paid 
+    from emp 
+    where sal = (select max(sal) from emp);
+
+29) select ename as lowest_paid 
+    from emp 
+    where sal = (select min(sal) from emp);
+
+30) select count(hiredate) 
+    from emp 
+    where to_char(hiredate, 'mm') = '01';
