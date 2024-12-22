@@ -16,7 +16,7 @@
 
 9) select deptno, count(*) from emp group by deptno;
 
-10) select sum(sal) from emp;
+10) select deptno, count(empno) from emp group by deptno;
 
 11) select job, count(*) from emp group by job;
 
